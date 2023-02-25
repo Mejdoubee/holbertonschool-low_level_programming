@@ -18,7 +18,7 @@ void times_table(void)
 			if (resu > 9)
 				_putchar((resu / 10) + '0'), _putchar((resu % 10) + '0');
 			else
-				_putchar((b == 0) ? '\0' : ' '), _putchar(resu + '0');
+				(b == 0) ? 'i' : _putchar(' '), _putchar(resu + '0');
 			(b < 9) ? (_putchar(','), _putchar(' ')) : _putchar('\n');
 		}
 	}
