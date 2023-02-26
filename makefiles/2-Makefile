@@ -4,7 +4,7 @@ OBJ = main.o school.o
 NAME = school
 
 all: $(NAME)
-$(NAME): $(OBJ)
+$(NAME): $(SRC)
 	$(CC) $^ -o $@
 clean:
 	rm -f $(NAME)
