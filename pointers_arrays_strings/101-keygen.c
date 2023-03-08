@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-int main()
+int main(void)
 {
 
 	printf("~~~~~~~~~~~~~~~~~~~~~~");
+		return (0);
 }
-	
