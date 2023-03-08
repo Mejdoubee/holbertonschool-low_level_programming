@@ -11,21 +11,19 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	size_t haystack_len = strlen(haystack);
-	size_t needle_len = strlen(needle);
+	size_t l1 = strlen(haystack);
+	size_t l2 = strlen(needle);
 	size_t i, j;
 
-	if (!haystack || !needle)
+	if (!needle)
 		return (NULL);
-	for (i = 0; i <= haystack_len - needle_len; i++)
+	for (i = 0; i <= l1 - l2; i++)
 	{
-		for (j = 0; j < needle_len; j++)
-		{
-		if (haystack[i + j] != needle[j])
-			break;
-		if (j == needle_len - 1)
+		for (j = 0; j < l2; j++)
+			if (haystack[i + j] != needle[j])
+				break;
+		if (j == l2)
 			return (haystack + i);
-		}
 	}
 	return (NULL);
 }
