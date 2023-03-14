@@ -30,9 +30,6 @@ int main(int argc, char *argv[])
 			}
 		}
 		sum += atoi(argv[i]);
-		/**
-		printf("The total command line arguments is %d and this line contain %s\n", argc, argv[j]);
-		*/
 	}
 	printf("%d\n", sum);
 	return (0);
