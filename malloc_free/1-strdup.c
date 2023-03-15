@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stddef.h>
+#include <stdio.h>
 
 /**
 * _strdup - fun allocate memory and copy from string to allocated mem
@@ -11,16 +12,22 @@
 
 char *_strdup(char *str)
 {
-	int i;
+	/*
+	* int i;
+	*/
 	char *s;
-	int size_t = strlen(str);
+	int str_len;
 
 	if (str == NULL)
 		return (NULL);
-	s = malloc(size_t *sizeof(char));
+	str_len = strlen(str + 1);
+	s = malloc(str_len * sizeof(char));
 	if (s == NULL)
 		return (NULL);
-	for (i = 0; i < size_t; i++)
-		s[i] = str[i];
+	/*
+	* for (i = 0; i < str_len; i++)
+	*	s[i] = str[i];
+	*/
+	strcpy(s, str);
 	return (s);
 }
