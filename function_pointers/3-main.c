@@ -12,8 +12,8 @@
 int main(int argc, char *argv[])
 {
 	int num1, num2, result = 0;
-
 	int (*operator)(int, int);
+
 	if (argc != 4)
 	{
 		printf("Error\n");
@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	}
 	if ((operator == op_div || operator == op_mod) && num2 == 0)
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(100);
 	}
 	result = operator(num1, num2);
