@@ -76,12 +76,10 @@ void print_all(const char * const format, ...)
 			if (format[i] == formats[j].type)
 			{
 				if (start)
-				{
 					printf("%s", sep);
 				start = 1;
 				formats[j].f(args);
 				break;
-				}
 			}
 			j++;
 		}
