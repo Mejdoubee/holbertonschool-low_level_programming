@@ -1,6 +1,23 @@
 #include "lists.h"
 
 /**
+* lenght - function that return the lenght of dlistint_t list
+* @head: pointer to the head of the list
+* Return: lenght of list
+*
+*/
+unsigned int lenght(dlistint_t *head)
+{
+	unsigned int len = 0;
+
+	while (head)
+	{
+		len++;
+		head = head->next;
+	}
+	return (len);
+}
+/**
 * find_index - function that find the node at i index
 * @head: pointer to the head of the list
 * @idx: index of the node
@@ -72,10 +89,14 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{
 		return (add_dnodeint(h, n));
 	}
+	if (idx == lenght(*h))
+	{
+		return (add_dnodeint_end(h, n));
+	}
 	ptr = find_index(*h, idx);
 	if (!ptr)
 	{
-		return (add_dnodeint_end(h, n));
+		return (NULL);
 	}
 	new = create_link_node(n, ptr->prev, ptr);
 	if (!new)
